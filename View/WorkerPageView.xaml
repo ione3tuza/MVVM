@@ -1,0 +1,219 @@
+﻿<Window x:Class="MVVM.View.WorkerPageView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:model="clr-namespace:MVVM.Model" d:DataContext="{d:DesignInstance Type=model:DigitalProduct}"
+        mc:Ignorable="d"
+        Title="WorkerPageView" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="25">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/back.jpg"/>
+        </Border.Background>
+        <Border CornerRadius="24">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" >
+
+                        <TextBlock 
+                            Text="Worker Page"
+                            Foreground="Black"
+                            FontSize="15"
+                            FontFamily="Montserrat"
+                            VerticalAlignment="Center"
+                            Margin="15 0 0 0"
+                            FontWeight="Bold"/>
+
+                        <TextBlock Text="Chill Game Product"
+                                   Margin="50 0 0 0"
+                                   Foreground="Black"
+                                   FontSize="28"
+                                   FontFamily="Montserrat"
+                                   FontWeight="Bold"
+                                   Opacity="0.85"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btnExit"
+                                    BorderThickness="0"
+                                    Content="Выйти"
+                                    Foreground="White"
+                                    HorizontalContentAlignment="Center"
+                                    FontSize="15"
+                                    FontFamily="Montserrat"
+                                    Cursor="Hand"
+                                    Opacity="0.85"
+                                    Height="30" Width="100">
+
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="#b63bce"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#aa85d4"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Width="100" 
+                                                Height="22"
+                                                CornerRadius="11"
+                                                Background="{TemplateBinding Background}">
+                                        <ContentPresenter
+                                                    HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
+
+                    <Button x:Name="btnMinimaze"
+                            Grid.Column="1"
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="15"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Opacity="0.85"
+                            Margin="0 0 0 5"
+                            Click="BtnClose_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#441f6e"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#aa85d4"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="22" 
+                                        Height="22"
+                                        CornerRadius="11"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter  HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnClose"
+                            Grid.Column="2"
+                            BorderThickness="0"
+                            Content="х"
+                            Foreground="White"
+                            FontSize="10"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Opacity="0.85"
+                            Margin="0 0 0 5"
+                            Click="BtnClose_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#441f6e"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#aa85d4"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="22" 
+                                        Height="22"
+                                        CornerRadius="11"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                </Grid>
+                
+                <Border Grid.Row="1"
+                            Margin="5,0,5,5"
+                            Background="#f8dffd"
+                            BorderThickness="0.5"
+                            Opacity="0.85">
+                    <Border.Effect>
+                        <BlurEffect Radius="10"/>
+                    </Border.Effect>
+                </Border>
+
+                <TextBlock Grid.Row="1"
+                           Text="Создано при поддержке самого себя"
+                           Foreground="Black"
+                           FontSize="8"
+                           FontFamily="Montserrat" 
+                           FontWeight="Light"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"/>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox Grid.Column="0" ItemsSource="{Binding DigitalProducts}"
+                 SelectedItem="{Binding SelectedDigitalProduct}" Margin="10">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5">
+                                    <TextBlock FontSize="18" Text="{Binding Path=Title}" />
+                                    <TextBlock Text="{Binding Path=Сategory}" />
+                                    <TextBlock Text="{Binding Path=Price}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel Grid.Column="1" DataContext="{Binding SelectedDigitalProduct}" Margin="10">
+                        <TextBlock Text="Выбранный элемент"  />
+                        <TextBlock Text="Модель" />
+                        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Text="Производитель" />
+                        <TextBox Text="{Binding Сategory, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Text="Цена" />
+                        <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+            
+            
+        </Border>
+    </Border>
+
+</Window>
