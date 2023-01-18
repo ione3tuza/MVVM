@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для RegisterView.xaml
+    /// Логика взаимодействия для MainView.xaml
     /// </summary>
-    public partial class RegisterView : Window
+    public partial class MainView : Window
     {
-        public RegisterView()
+
+        public MainView()
         {
             InitializeComponent();
-            
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -51,7 +51,10 @@ namespace MVVM.View
 
         private void Button_Click_Register(object sender, RoutedEventArgs e)
         {
-
+            RegisterView window = new RegisterView();
+            window.Show();
+            this.Close();
         }
+
     }
 }

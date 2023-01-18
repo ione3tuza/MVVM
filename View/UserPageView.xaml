@@ -55,7 +55,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button x:Name="btnExit"
+                        <Button
                                     BorderThickness="0"
                                     Content="Выйти"
                                     Foreground="White"
@@ -64,7 +64,8 @@
                                     FontFamily="Montserrat"
                                     Cursor="Hand"
                                     Opacity="0.85"
-                                    Height="30" Width="100">
+                                    Height="30" Width="100"
+                                    Click="Button_Click_Exit">
 
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">

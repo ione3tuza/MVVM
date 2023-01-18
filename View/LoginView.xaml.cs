@@ -19,6 +19,12 @@ namespace MVVM.View
     /// </summary>
     public partial class LoginView : Window
     {
+
+        public LoginView()
+        {
+            InitializeComponent();
+        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -33,6 +39,18 @@ namespace MVVM.View
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Button_Click_Login(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Register(object sender, RoutedEventArgs e)
+        {
+            RegisterView window = new RegisterView();
+            window.Show();
+            this.Close();
         }
     }
 }

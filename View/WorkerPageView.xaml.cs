@@ -42,5 +42,12 @@ namespace MVVM.View
         {
             Application.Current.Shutdown();
         }
+
+        private void Button_Click_Exit(object sender, RoutedEventArgs e)
+        {
+            MainView window = new MainView();
+            window.Show();
+            this.Close();
+        }
     }
 }

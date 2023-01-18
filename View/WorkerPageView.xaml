@@ -62,7 +62,8 @@
                                     FontFamily="Montserrat"
                                     Cursor="Hand"
                                     Opacity="0.85"
-                                    Height="30" Width="100">
+                                    Height="30" Width="100"
+                                    Click="Button_Click_Exit">
 
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
@@ -199,14 +200,91 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <StackPanel Grid.Column="1" DataContext="{Binding SelectedDigitalProduct}" Margin="10">
-                        <TextBlock Text="Выбранный элемент"  />
-                        <TextBlock Text="Модель" />
-                        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Производитель" />
-                        <TextBox Text="{Binding Сategory, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Цена" />
-                        <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+                    <StackPanel Grid.Column="1">
+                        
+                        <StackPanel DataContext="{Binding SelectedDigitalProduct}" Margin="10">
+                            <TextBlock Text="Выбранный элемент"  />
+                            <TextBlock Text="Название" />
+                            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Text="Категория" />
+                            <TextBox Text="{Binding Сategory, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Text="Цена" />
+                            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            
+                            <Button Margin="5" Command="{Binding AddCommand}" BorderThickness="0"
+                                    Content="Добавить"
+                                    Foreground="White"
+                                    HorizontalContentAlignment="Center"
+                                    FontSize="15"
+                                    FontFamily="Montserrat"
+                                    Cursor="Hand"
+                                    Opacity="0.85"
+                                    Height="30" Width="100">
+
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="DarkRed"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#aa85d4"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Width="100" 
+                                                Height="22"
+                                                CornerRadius="11"
+                                                Background="{TemplateBinding Background}">
+                                            <ContentPresenter
+                                                    HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            
+                            <Button Width="100" Margin="5" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedDigitalProduct}" 
+                                    BorderThickness="0"
+                                    Content="Удалить"
+                                    Foreground="White"
+                                    HorizontalContentAlignment="Center"
+                                    FontSize="15"
+                                    FontFamily="Montserrat"
+                                    Cursor="Hand"
+                                    Opacity="0.85"
+                                    Height="30" >
+
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="DarkRed"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#aa85d4"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Width="100" 
+                                                Height="22"
+                                                CornerRadius="11"
+                                                Background="{TemplateBinding Background}">
+                                            <ContentPresenter
+                                                    HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            
+                        </StackPanel>
+                        
                     </StackPanel>
                 </Grid>
 

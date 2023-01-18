@@ -201,7 +201,7 @@
                                    VerticalAlignment="Top"
                                    TextWrapping="Wrap"/>
 
-                        <Button x:Name="btnLogin"
+                        <Button 
                                 BorderThickness="0"
                                 Content="Войти"
                                 Foreground="White"
@@ -212,7 +212,8 @@
                                 Grid.Row="2"
                                 Opacity="0.85"
                                 Width="100" 
-                                Height="30">
+                                Height="30"
+                                Click="Button_Click_Login">
 
                             <Button.Style>
                                 <Style TargetType="Button">
@@ -238,7 +239,7 @@
                             </Button.Template>
 
                         </Button>
-                        <Button x:Name="btnRegistr"
+                        <Button 
                             BorderThickness="0"
                             Content="Зарегистрироваться"
                             Foreground="White"
@@ -247,7 +248,8 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Opacity="0.85"
-                            Height="30" Width="170">
+                            Height="30" Width="170"
+                            Click="Button_Click_Register">
 
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">

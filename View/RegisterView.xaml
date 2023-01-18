@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MVVM.View"
+        xmlns:local="clr-namespace:MVVM.View" xmlns:model="clr-namespace:MVVM.Model" d:DataContext="{d:DesignInstance Type=model:DigitalProduct}"
         mc:Ignorable="d"
         Title="RegisterView" Height="450" Width="800"
         WindowStyle="None"
@@ -121,7 +121,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="1"
-                            Margin="0 35 0 50"
+                            Margin="0 0 0 2"
                             Background="#f8dffd"
                             BorderThickness="0.5"
                             Opacity="0.85">
@@ -130,8 +130,8 @@
                         </Border.Effect>
                     </Border>
                     <StackPanel Grid.Column="1"
-                                Margin="0 45 0 50">
-
+                                Margin="0 0 0 2">
+                        
                         <Image Source="/Images/logo.png"
                                Width="60"
                                Height="60"/>
@@ -163,8 +163,9 @@
                                    VerticalAlignment="Center"
                                    Margin="5 5 0 0"/>
 
-                        <TextBox x:Name="txtUser"
-                                 FontSize="12"
+                        <TextBox
+                            
+                                FontSize="12"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="Transparent"
@@ -172,7 +173,8 @@
                                  CaretBrush="#f1c0fa"
                                  BorderBrush="#b63bce"
                                  BorderThickness="0 0 0 1" Width="230" Height="20"/>
-
+                      
+                    
                         <TextBlock Text="Password"
                                    Foreground="#2e2e2e"
                                    FontSize="12"
@@ -182,7 +184,7 @@
                                    VerticalAlignment="Center"
                                    Margin="5 5 0 0"/>
 
-                        <TextBox x:Name="txtPass"
+                        <TextBox 
                                  FontSize="12"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
@@ -201,8 +203,45 @@
                                    VerticalAlignment="Center"
                                    Margin="5 5 0 0"/>
 
-                        <TextBox x:Name="txtRepeatPass"
+                        <TextBox 
                                  FontSize="12"
+                                 FontWeight="Medium"
+                                 FontFamily="Montserrat"
+                                 Background="Transparent"
+                                 Foreground="Black"
+                                 CaretBrush="#f1c0fa"
+                                 BorderBrush="#b63bce"
+                                 BorderThickness="0 0 0 1" Width="230" Height="20"/>
+
+                        <TextBlock Text="Phone +7"
+                                   Foreground="#2e2e2e"
+                                   FontSize="12"
+                                   FontFamily="Montserrat" 
+                                   FontWeight="Medium"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="5 5 0 0"/>
+
+                        <TextBox 
+                                 FontSize="12"
+                                 FontWeight="Medium"
+                                 FontFamily="Montserrat"
+                                 Background="Transparent"
+                                 Foreground="Black"
+                                 CaretBrush="#f1c0fa"
+                                 BorderBrush="#b63bce"
+                                 BorderThickness="0 0 0 1" Width="230" Height="20"/>
+
+                        <TextBlock Text="Email"
+                                   Foreground="#2e2e2e"
+                                   FontSize="12"
+                                   FontFamily="Montserrat" 
+                                   FontWeight="Medium"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="5 5 0 0"/>
+
+                        <TextBox FontSize="12"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="Transparent"
@@ -220,7 +259,7 @@
                                    VerticalAlignment="Top"
                                    TextWrapping="Wrap"/>
 
-                        <Button x:Name="btnRegister"
+                        <Button 
                                 BorderThickness="0"
                                 Content="Зарегистрироваться"
                                 Foreground="White"
@@ -231,7 +270,8 @@
                                 Grid.Row="2"
                                 Opacity="0.85"
                                 Width="170" 
-                                Height="30">
+                                Height="30"
+                                Click="Button_Click_Register">
 
                             <Button.Style>
                                 <Style TargetType="Button">
@@ -257,7 +297,8 @@
                             </Button.Template>
 
                         </Button>
-                        <Button x:Name="btnLogin"
+                        
+                        <Button
                             BorderThickness="0"
                             Content="Войти"
                             Foreground="White"
@@ -266,7 +307,8 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Opacity="0.85"
-                            Height="30" Width="100">
+                            Height="30" Width="100"
+                            Click="Button_Click_Login">
 
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
@@ -299,7 +341,7 @@
                                    FontFamily="Montserrat" 
                                    FontWeight="Light"
                                    HorizontalAlignment="Center"
-                                   Margin="0 60 0 0"/>
+                                   Margin="0 15 0 0"/>
                     </StackPanel>
                 </Grid>
 
